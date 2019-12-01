@@ -1,3 +1,15 @@
+"""
+
+This program splits the test data into training and development set
+so as to help tune the features of any algorithm to perform sentiment analysis
+
+I set the program to split the "train.tsv" file into:
+75% that becomes the training data in the file "training.tsv" and 25% that becomes the development file in "development.tsv"
+
+Feel free to change how the data is split at will
+
+"""
+
 from __future__ import division
 #import the training file
 training_file = open("train.tsv", "r")

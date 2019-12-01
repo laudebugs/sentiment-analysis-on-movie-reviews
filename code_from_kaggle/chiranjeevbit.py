@@ -11,7 +11,7 @@ nltk.download('wordnet')
 
 
 #print(os.listdir(""))
-
+#os.chdir("..")
 # The Natural Language Toolkit, or more commonly NLTK, is a suite of libraries and programs for symbolic and
 # statistical natural language processing for English written in the Python programming language.
 import nltk
@@ -40,8 +40,8 @@ from keras.models import Sequential
 set_random_seed(123)
 random.seed(123)
 
-train= pd.read_csv("train.tsv", sep="\t")
-test = pd.read_csv("test.tsv", sep="\t")
+train= pd.read_csv("../dataset/train.tsv", sep="\t")
+test = pd.read_csv("../dataset/test.tsv", sep="\t")
 
 train.head()
 train.shape
@@ -165,6 +165,6 @@ plt.show()
 #make the predictions with trained model and submit the predictions.
 y_pred=model.predict_classes(X_test)
 
-sub_file = pd.read_csv('sampleSubmission.csv',sep=',')
+sub_file = pd.read_csv('../dataset/sampleSubmission.csv',sep=',')
 sub_file.Sentiment=y_pred
 sub_file.to_csv('Submission.csv',index=False)

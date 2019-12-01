@@ -1,3 +1,10 @@
+"""
+A Naive Bayes system for performing sentiment analysis
+I am using the text book to develop the system. (Speech and Language Processing, Chapter 4)
+
+"""
+
+
 from __future__ import division
 import nltk
 import numpy as np
