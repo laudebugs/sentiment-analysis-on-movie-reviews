@@ -34,7 +34,9 @@ for i in range(len(output_lines)-1):
         j = int(ans[1])
         M[i][j] += 1
     else:
-        print "Error: ID sequence does not match!\nEnding Evaluation"
+        print "Error: ID sequence does not match!\nCheck Output file\nEnding Evaluation"
+        exit()
+
 
 #Calculate The precision and recall for each of the sentiment classes.
 # Where i is the the rows and j is the columns
@@ -51,9 +53,9 @@ for i in range(5):
     precision += M[i][i]/precision_sum
     recall += M[i][i]/recall_sum
 
-precision_ave = precision/5
-recall_ave = recall/5
-f_score = 2/((1/precision_ave)+(1/recall_ave))
+precision_ave = (precision/5)*100
+recall_ave =( recall/5) *100
+f_score = (2/((1/precision_ave)+(1/recall_ave)))
 
-#Print the output 
-print("Precision: %.4f\nRecall: %.4f\nF-Score: %.4f" %(precision_ave, recall_ave, f_score))
+#Print the output
+print("Precision: %.2f%%\nRecall: %.2f%%\nF-Score: %.2f%%" %(precision_ave, recall_ave, f_score))
