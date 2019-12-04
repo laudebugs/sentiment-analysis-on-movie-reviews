@@ -50,8 +50,11 @@ for i in range(len_train):
     # Analyse the phrase
     """
     Note: This analysis assumes that for each phrase that indicates a particular sentiment, all the words in the phrase will be marked as bearing that sentiment.
+    An example would be: for words that are neutral, they may be marked as bearing a sentiment of negative or positive, such as
     One approach would be analysing the single words, then moving on up the tree. However, assuming that all the data is parsed correctly, there would be no new
     words when we move up the tree.
+
+
 
     """
     for w in words:

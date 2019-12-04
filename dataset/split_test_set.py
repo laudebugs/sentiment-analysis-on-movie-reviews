@@ -27,7 +27,7 @@ for i in range(1, len_train):
     else:
         values = training_file_lines[i].split('\t')
         development_file.write(values[0]+"\t"+values[1]+"\t"+values[2]+"\n")
-        development_anskey.write(values[0]+"\t"+values[3]+"\n")
+        development_anskey.write(values[0]+"\t"+values[3])
 
 training_file.close()
 development_file.close()
