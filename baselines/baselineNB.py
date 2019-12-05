@@ -46,7 +46,12 @@ for i in range(len_train):
     phrase = values[2]
     sentiment = int(values[3])
     # Tokenize the phrase
-    words = nltk.word_tokenize(phrase)
+    all_words = nltk.word_tokenize(phrase)
+    words = []
+    #Cap no of words instances in a document at 1, i.e. do not include repeated words
+    for word in all_words:
+        if word not in words:
+            words.append(word)
     # Analyse the phrase
     """
     Note: This analysis assumes that for each phrase that indicates a particular sentiment, all the words in the phrase will be marked as bearing that sentiment.
